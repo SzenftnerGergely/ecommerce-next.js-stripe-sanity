@@ -6,3 +6,18 @@ export interface simplifiedProduct {
     categoryName: string,
     name: string
 }
+
+export interface fullProduct {
+    _id: string,
+    images: any,
+    price: number,
+    slug: string,
+    categoryName: string,
+    name: string,
+    description: string
+}
+
+export interface iAppProps {
+    images: any,
+    
+}

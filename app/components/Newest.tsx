@@ -20,17 +20,17 @@ async function getData() {
 }
 
 const Newest = async () => {
-    const data:simplifiedProduct[] = await getData()
+    const data: simplifiedProduct[] = await getData()
 
     return (
-        <div className='bg-white'> 
+        <div className='bg-white'>
             <div className='mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8'>
                 <div className='flex justify-between items-center'>
                     <h2 className='text-2xl font-bold tracking-tight text-gray-900'>Our Newest products</h2>
                     <Link className='text-primary flex items-center gap-x-1' href="/all">
-                        See All 
+                        See All
                         <span>
-                            <ArrowRight/>
+                            <ArrowRight />
                         </span>
                     </Link>
                 </div>
@@ -39,11 +39,11 @@ const Newest = async () => {
                     {data.map((product) => (
                         <div key={product._id} className='group relative'>
                             <div className='aspect-square w-full overflow-hidden rounded-md bg-group-200 group-hover:opacity-75 lg:h-80'>
-                                <Image 
-                                    src={product.imageUrl} 
-                                    alt='Product image' 
+                                <Image
+                                    src={product.imageUrl}
+                                    alt='Product image'
                                     className='w-full h-full object-cover 
-                                    object-center lg:h-full lg:w-full' 
+                                    object-center lg:h-full lg:w-full'
                                     width={300}
                                     height={300}
                                 />
