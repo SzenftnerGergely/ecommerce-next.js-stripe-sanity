@@ -7,26 +7,26 @@ import { ProductCart } from '../interface'
 import { urlFor } from '../lib/sanity'
 
 
-const AddToBag = ({ currency, description, image, name, price }: ProductCart) => {
+const AddToBag = ({ currency, description, image, name, price, price_id }: ProductCart) => {
     const { addItem, handleCartClick } = useShoppingCart()
 
     const product = {
-        currency: currency,
-        description: description,
-        image: urlFor(image).url(),
         name: name,
+        description: description,
         price: price,
-        id: "id"
-    }
-
-    return (
+        currency: currency,
+        image: urlFor(image).url(),
+        price_id: price_id,
+      };
+      return (
         <Button
-            onClick={() => {
-                addItem(product), handleCartClick();
-            }}>
-            Add To Cart
+          onClick={() => {
+            addItem(product), handleCartClick();
+          }}
+        >
+          Add To Cart
         </Button>
-    )
+      );
 }
 
 export default AddToBag

@@ -28,6 +28,11 @@ export default {
             },
         },
         {
+            name:'price_id',
+            title: 'Stripe Price ID',
+            type: 'string'
+        },
+        {
             name: 'price',
             title: 'Price',
             type: 'number',

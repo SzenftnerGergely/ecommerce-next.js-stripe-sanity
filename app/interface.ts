@@ -15,11 +15,11 @@ export interface fullProduct {
     categoryName: string,
     name: string,
     description: string
+    price_id: string
 }
 
 export interface iAppProps {
     images: any,
-    
 }
 
 export interface ProductCart {
@@ -27,5 +27,6 @@ export interface ProductCart {
     description: string,
     price: number,
     currency: string,
-    image: any
+    image: any,
+    price_id: string
 }

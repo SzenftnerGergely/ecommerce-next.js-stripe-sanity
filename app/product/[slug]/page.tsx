@@ -1,5 +1,6 @@
 
 import AddToBag from '@/app/components/AddToBag';
+import CheckoutNow from '@/app/components/CheckoutNow';
 import ImageGallery from '@/app/components/ImageGallery';
 import { fullProduct } from '@/app/interface'
 import { client } from '@/app/lib/sanity'
@@ -22,6 +23,8 @@ async function getData(slug: string) {
     const data = await client.fetch(query)
     return data
 }
+
+export const dynamic = "force-dynamic";
 
 const ProductPage = async ({
     params,
@@ -69,21 +72,30 @@ const ProductPage = async ({
                         </div>
 
                         <div className='mb-6 flex items-center gap-2 text-gray-500'>
-                            <Truck className='w-6 h-6'/>
+                            <Truck className='w-6 h-6' />
                             <span className='text-sm'>2-4 Days Shipping</span>
                         </div>
                         <div className='flex gap-2.5'>
-                            <AddToBag 
-                                currency='USD' 
-                                description={data.description} 
+                            <AddToBag
+                                currency='USD'
+                                description={data.description}
                                 image={data.images[0]}
                                 name={data.name}
                                 price={data.price}
                                 key={data._id}
+                                price_id={data.price_id}
                             />
-                            <Button variant={"secondary"}>Checkout now</Button>
+                            <CheckoutNow
+                                currency="USD"
+                                description={data.description}
+                                image={data.images[0]}
+                                name={data.name}
+                                price={data.price}
+                                key={data._id}
+                                price_id={data.price_id}
+                            />
                         </div>
-                        
+
                         <p className='mt-12 text-base text-gray-500 tracking-wide'>
                             {data.description}
                         </p>
