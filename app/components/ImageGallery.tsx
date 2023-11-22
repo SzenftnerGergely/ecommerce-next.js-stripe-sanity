@@ -39,7 +39,7 @@ const ImageGallery = ({ images }: iAppProps) => {
                     className='h-full w-full object-center object-cover' 
                 />
 
-                <span className=''></span>
+                <span className='absolute left-0 top-0 rounded-br-lg bg-red-500 px-3 py-1.5 text-sm uppercase tracking-wider text-white'>Sale</span>
             </div>
         </div>
     )
